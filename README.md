@@ -1,5 +1,21 @@
 # NLP Assignment
 
+# Preprocessing
+
+All the preprocessing is taken care of in the "nlp_assigment.py" script. All lines in the e-mails with the following characters are removed (along with empty lines):
+
+```
+'--', ':', '@', '<', '>'
+```
+
+Lines with these symbols are likely to be metadata like sender's address, receiver's address, etc. Following this, the lines are tokenized, stopwords are removed, words are lemmatized, all special characters and numbers are removed, and all alphabets are converted to lower case.
+
+# Models
+
+# SVM with TF-IDF
+
+# Results
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/76472410/174397284-e14c32be-46f2-421c-9f91-c89f91906c99.png" width="512">
 <img src="https://user-images.githubusercontent.com/76472410/174397308-a5fc9a83-3cf9-4d43-bb29-9fecd057b771.png" width="512">
