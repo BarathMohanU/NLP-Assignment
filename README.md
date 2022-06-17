@@ -28,7 +28,7 @@ A Support Vector Machine is chosen to be a baseline model. TF-IDF features were 
 
 ## Recurrent Neural Network
 
-An LSTM model was chosen to model the classification problem given the emails. Pre-trained embeddings from the GloVe model was downloaded from [here](https://keras.io/examples/nlp/pretrained_word_embeddings/#:~:text=download%20pre%2Dtrained-,GloVe,-embeddings%20(a%20822M)
+An LSTM model was chosen to model the classification problem given the emails. Pre-trained embeddings from the GloVe model was downloaded from [here](http://nlp.stanford.edu/data/glove.6B.zip)
 
 # Results
 
