@@ -16,6 +16,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import accuracy_score
+from contextlib import redirect_stdout
 
 def preprocess(filename):
     # function to preprocess a given file and output a list of words in its content.
@@ -69,7 +70,7 @@ def model(embedding_matrix, num_tokens, embedding_dim, max_seq):
     x = tf.keras.layers.Dropout(0.4, name='Dropout')(x)
     x = tf.keras.layers.Dense(50, activation='elu', name='Dense')(x)
     outputs = tf.keras.layers.Dense(6, activation='softmax', name='Softmax_Output')(x)
-    return tf.keras.Model(inputs=inputs, outputs=outputs)
+    return tf.keras.Model(inputs=inputs, outputs=outputs, name='LSTM_Model')
 
 def one_hot(y):
     # Returns one-hot encoding of a vector
@@ -182,6 +183,10 @@ svm_metrics['test_accuracy'],  svm_metrics['test_auroc'],\
 lstm_model = model(embedding_matrix, num_tokens, embedding_dim, data.shape[1])
 lstm_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001), loss=tf.keras.losses.CategoricalCrossentropy(), 
                     metrics=['accuracy', tf.keras.metrics.AUC(), tf.keras.metrics.Recall(), tf.keras.metrics.Precision()])
+# save model summary
+with open('./Saved Model/lstm_model_summary.txt', 'w') as f:
+    with redirect_stdout(f):
+        lstm_model.summary()
 history = lstm_model.fit(X_train, y_train, epochs=100, batch_size=128, validation_data=[X_test, y_test])
 
 # save the model and the history of the metrics and losses

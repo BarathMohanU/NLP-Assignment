@@ -1,0 +1,23 @@
+Model: "LSTM_Model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ Input (InputLayer)          [(None, 507)]             0         
+                                                                 
+ Word_Embedding (Embedding)  (None, 507, 50)           250000    
+                                                                 
+ LSTM_1 (LSTM)               (None, 507, 100)          60400     
+                                                                 
+ LSTM_2 (LSTM)               (None, 100)               80400     
+                                                                 
+ Dropout (Dropout)           (None, 100)               0         
+                                                                 
+ Dense (Dense)               (None, 50)                5050      
+                                                                 
+ Softmax_Output (Dense)      (None, 6)                 306       
+                                                                 
+=================================================================
+Total params: 396,156
+Trainable params: 396,156
+Non-trainable params: 0
+_________________________________________________________________
