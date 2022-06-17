@@ -24,11 +24,17 @@ Top 5000 most occuring words are kept and others are removed.
 
 ## SVM with TF-IDF
 
-A Support Vector Machine is chosen to be a baseline model. TF-IDF features were chosen to be fed to the SVM. TF-IDF stands for term frequency–inverse document frequency. It shows the importance of a word in a given document.
+A Support Vector Machine is chosen to be a baseline model. TF-IDF features were chosen to be fed to the SVM. TF-IDF stands for term frequency–inverse document frequency. It shows the importance of a word in a given document. Scikit-learn was used for both TF-IDF and SVM.
 
 ## Recurrent Neural Network Model
 
 An LSTM model was chosen to model the classification problem given the emails. Pre-trained embeddings from the GloVe model was downloaded from [here](http://nlp.stanford.edu/data/glove.6B.zip). I used the 50-dimensional embeddings. For words in GloVe's vocabulary, the embeddings were initialized with the saved vectors, otherwise they were initialized randomly. The overall architecture is as follows:
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/76472410/174401621-51cad782-ac3d-466c-8620-4c82e5026e44.png" width="300">
+</p>
+
+Tensorflow was used to construct and train the model.
 
 # Results
 
