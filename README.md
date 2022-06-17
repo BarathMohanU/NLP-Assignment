@@ -22,13 +22,13 @@ Top 5000 most occuring words are kept and others are removed.
 
 # Models
 
-# SVM with TF-IDF
+## SVM with TF-IDF
 
 A Support Vector Machine is chosen to be a baseline model. TF-IDF features were chosen to be fed to the SVM. TF-IDF stands for term frequency–inverse document frequency. It shows the importance of a word in a given document.
 
-# Recurrent Neural Network
+## Recurrent Neural Network
 
-An LSTM model was chosen to model the classification problem given the emails. Pre-trained embeddings from the GloVe model was downloaded from [here]{https://keras.io/examples/nlp/pretrained_word_embeddings/#:~:text=download%20pre%2Dtrained-,GloVe,-embeddings%20(a%20822M}
+An LSTM model was chosen to model the classification problem given the emails. Pre-trained embeddings from the GloVe model was downloaded from [here](https://keras.io/examples/nlp/pretrained_word_embeddings/#:~:text=download%20pre%2Dtrained-,GloVe,-embeddings%20(a%20822M)
 
 # Results
 
