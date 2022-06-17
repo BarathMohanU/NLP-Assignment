@@ -55,3 +55,16 @@ plt.xlabel('Epochs')
 plt.legend()
 plt.savefig('./Plots/auc_plot.png', dpi=300)
 plt.show()
+
+def f1_score(precision, recall):
+    return 2/((1/precision)+(1/recall))
+
+plt.plot(x, np.squeeze(f1_score(data['precision'], data['recall'])), color=sns.color_palette()[0], label='LSTM Train F1-Score')
+plt.plot(x, np.squeeze(f1_score(data['val_precision'], data['val_recall'])), color=sns.color_palette()[1], label='LSTM Test F1-Score')
+plt.axhline(y = f1_score(svm_data['train_precision'], svm_data['train_recall']), color = sns.color_palette()[0], linestyle = '--', label='SVM Train F1-Score')
+plt.axhline(y = f1_score(svm_data['test_precision'], svm_data['test_recall']), color = sns.color_palette()[1], linestyle = '--', label='SVM Test F1-Score')
+plt.ylabel('F1-Score')
+plt.xlabel('Epochs')
+plt.legend()
+plt.savefig('./Plots/f1_plot.png', dpi=300)
+plt.show()
