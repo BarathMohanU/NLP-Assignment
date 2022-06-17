@@ -8,11 +8,25 @@ All the preprocessing is taken care of in the "nlp_assigment.py" script. All lin
 '--', ':', '@', '<', '>'
 ```
 
-Lines with these symbols are likely to be metadata like sender's address, receiver's address, etc. Following this, the lines are tokenized, stopwords are removed, words are lemmatized, all special characters and numbers are removed, and all alphabets are converted to lower case.
+Lines with these symbols are likely to be metadata like sender's address, receiver's address, etc. Following this, the lines are tokenized, stopwords are removed, words are lemmatized, all special characters and numbers are removed, and all alphabets are converted to lower case using the following packages:
+
+```
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('stopwords')
+import re
+```
+
+Top 5000 most occuring words are kept and others are removed.
 
 # Models
 
 # SVM with TF-IDF
+
+A Support Vector Machine is chosen to be a baseline model. TF-IDF features were chosen to be fed to the SVM. TF-IDF stands for term frequency–inverse document frequency. It shows the importance of a word in a given document. It is given by:
+
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 # Results
 
