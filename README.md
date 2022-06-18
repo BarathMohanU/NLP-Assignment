@@ -2,7 +2,7 @@
 
 # Preprocessing
 
-All the preprocessing is taken care of in the "nlp_assigment.py" script. All lines in the e-mails with the following characters are removed (along with empty lines):
+All the preprocessing is taken care of in the "nlp_assigment.py" script (the same script also defines, trains, and tests the models). All lines in the e-mails with the following characters are removed (along with empty lines):
 
 ```
 '--', ':', '@', '<', '>'
